@@ -11,4 +11,13 @@ You can install `git-checkout-interactive` using
 | manual | Clone and run `make install` |  
 
 ## Usage
+Run this command in your repo
+```
+git checkout-interactive
+```
 
+An alias can be added in `~/.bashrc` or `~/.zshrc`
+```
+alias gcoi="git checkout-interactive"
+```
+After adding this simply run the command `gcoi` in your repo

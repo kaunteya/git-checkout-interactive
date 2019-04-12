@@ -16,8 +16,12 @@ Run this command in your repo
 git checkout-interactive
 ```
 
+### Adding an alias
 An alias can be added in `~/.bashrc` or `~/.zshrc`
 ```
 alias gcoi="git checkout-interactive"
 ```
-After adding this simply run the command `gcoi` in your repo
+After adding this simply run `gcoi` in your repo
+
+# License
+`git-checkout-interactive` is released under the MIT license. See LICENSE for details.

@@ -1,4 +1,7 @@
 # git-checkout-interactive
+
+git-checkout-interactive is an extension that presents you with the list of branches you are likely to checkout. So instead of typing those long branch names simply type a number and you are set!!
+
 ![Demo](/Others/demo.gif)
 
 ## Install

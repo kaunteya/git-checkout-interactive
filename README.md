@@ -1,5 +1,5 @@
 # git-checkout-interactive
-
+![Demo](/Others/demo.gif)
 
 ## Install
 

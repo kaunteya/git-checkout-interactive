@@ -1,8 +1,15 @@
 #!/usr/bin/env bash
 
+## Set colors
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color
+
+## If .git directory does not exists exit
+if [ ! -d ".git" ]; then
+  printf "\n${RED}ERROR: Not a valid git repository \n";
+  exit 1
+fi
 
 # Fetch all recent branches sorted by recency of commit
 branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format='%(refname:short)')

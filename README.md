@@ -31,5 +31,5 @@ alias gcoi="git checkout-interactive"
 ```
 After adding and alias, simply run `gcoi` in your repo
 
-# License
+## License
 `git-checkout-interactive` is released under the MIT license. See LICENSE for details.

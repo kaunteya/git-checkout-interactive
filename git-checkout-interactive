@@ -12,12 +12,14 @@ if [ ! -d ".git" ]; then
 fi
 
 # Fetch all recent branches sorted by recency of commit
-branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format='%(refname:short)')
+branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ refs/remotes/ --format='%(refname:short)' \
+  | sed -e s'/^origin\///' \
+  | uniq)
 
 # Convert branch string to array of branch names
 arr=()
 while read -r line; do
-   arr+=("$line")
+  arr+=("$line")
 done <<< "$branches"
 
 # Present the list to the user
@@ -29,9 +31,11 @@ do
 done
 
 # Take input from user
-printf "\n${GREEN}Enter the branch number to be checked out: "
+printf "\n${GREEN}Enter the branch number to be checked out:${NC} "
 read userInput
 userInput=$((userInput-1))
+branch="${arr[$userInput]}"
 
 # Check out the selected branch
-git checkout ${arr[$userInput]}
+git checkout $branch
+

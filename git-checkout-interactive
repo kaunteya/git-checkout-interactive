@@ -33,7 +33,7 @@ printf "\n${GREEN}Enter the branch number to be checked out: "
 read userInput
 userInput=$((userInput-1))
 
-if [ userInput = "userInput" ]; then
+if [ $userInput -gt ${#arr[@]} ] || [ $userInput -eq ${#arr[@]} ] || [ $userInput -eq -1 ]; then
   printf "\n${RED}ERROR: No branch selected. abort. \n";
   exit 1
 fi

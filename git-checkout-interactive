@@ -33,5 +33,10 @@ printf "\n${GREEN}Enter the branch number to be checked out: "
 read userInput
 userInput=$((userInput-1))
 
+if [ $userInput -ge ${#arr[@]} ] || [ $userInput -lt 0 ]; then
+  printf "\n${RED}ERROR: No branch selected. abort. \n";
+  exit 1
+fi
+
 # Check out the selected branch
 git checkout ${arr[$userInput]}

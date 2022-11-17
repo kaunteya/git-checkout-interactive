@@ -6,7 +6,7 @@ GREEN='\033[0;32m'
 NC='\033[0m' # No Color
 
 ## If .git directory does not exists exit
-if [ ! -d ".git" ]; then
+if [ ! -d ".git" ] && [ ! -f ".git" ]; then
   printf "\n${RED}ERROR: Not a valid git repository \n";
   exit 1
 fi
